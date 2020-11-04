@@ -1,0 +1,18 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <div class="row">
+        {% for p in productos %}
+            {% if p.foto %}
+            <div class="col s12 m4 l3 ">
+                <center><img src="{{ p.foto.url }}"  alt="" width="250" height="250"></center>
+                <br>
+                <center><p class="flow-text">{{p.nombre}} ${{p.precio}}</p></center>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

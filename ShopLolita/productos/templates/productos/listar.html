@@ -1,0 +1,19 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    <h1>Boton listar</h1>
+    <br><br>
+
+    <form action="mostrar_productos" method="POST">
+        {% csrf_token %}
+        <label>Pinche este boton para listar los productos:</label>
+        <input type="submit" name="opcion" value="Listar">
+    </form>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
+
+

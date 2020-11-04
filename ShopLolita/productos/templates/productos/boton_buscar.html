@@ -1,0 +1,30 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <h3>Buscar Producto por Código</h3>
+    <br><br>
+    {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <script type='text/javascript'>alert('Error, producto no existente');</script>
+                {% endif %}
+            {% endfor %}
+    {% endif %}
+    <div class="row">
+        <div class="col s4 offset-s4">
+            <form action="buscar_por_id" method="POST">
+                {% csrf_token %}
+                <label>Ingrese el código del producto</label>
+                <input type="number" name="numero">
+                <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i><input type="submit" name="opcion" value="Buscar"></a>
+                <a href="administrar" class="waves-effect waves-light btn">Cancelar</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

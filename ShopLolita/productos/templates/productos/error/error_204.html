@@ -1,0 +1,17 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Error 204 {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <h3>Error, datos no guardados correctamente</h3>
+
+    <div class="row">
+        <div class="col s4 offset-s4">
+            <a href="administrar" class="waves-effect waves-light btn">Volver</a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}

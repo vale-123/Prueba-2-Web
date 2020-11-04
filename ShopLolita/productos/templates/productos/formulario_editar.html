@@ -1,0 +1,87 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <h3>Editar un producto</h3>
+    <hr>
+    <br><br>
+    <form action="actualizar_producto" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="hidden" name="id_producto" value="{{producto.id_producto}}">
+        <div class="row">
+            <div class="col s3 offset-s3">
+                <label>Código   :</label><input type="number" name="numero" value="{{producto.numero}}"><br>
+            </div>
+            <div class="col s3">
+                <label>Nombre   :</label><input type="text" name="nombre" value="{{producto.nombre}}"><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s3">
+                <label>Stock   :</label><input type="number" name="stock" value="{{producto.stock}}"><br>
+            </div>
+            <div class="col s3">
+                <label>Precio   :</label><input type="number" name="precio" value="{{producto.precio}}"><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s3">
+                <label>Tipo     :</label>
+                 <select name="tipo" value="{{producto.tipo}}">
+                     <option value="Seleccionar" disabled>Seleccionar</option>
+                     {% if producto.tipo == "Calzado" %}
+                         <option value="Calzado" selected>Calzado</option>
+                     {% else %}
+                         <option value="Calzado">Calzado</option>
+                     {% endif %}
+                     {% if producto.tipo == "Snack" %}
+                         <option value="Ropa" selected>Ropa</option>
+                     {% else %}
+                         <option value="Ropa">Ropa</option>
+                     {% endif %}
+                     {% if producto.tipo == "Accesorios" %}
+                         <option value="Accesorios" selected>Accesorios</option>
+                     {% else %}
+                         <option value="Accesorios">Accesorios</option>
+                     {% endif %}
+                     {% if producto.tipo == "Vestidos" %}
+                         <option value="Vestidos" selected>Vestidos</option>
+                     {% else %}
+                         <option value="Vestidos">Vestidos</option>
+                     {% endif %}
+                 </select><br>
+            </div>
+            <div class="col s3">
+                <label>Foto  :</label>
+                <div class="file-field input-field">
+                    <div class="btn">
+                        <span>Archivo</span>
+                        <input type="file" name="foto">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" value="{{producto.foto}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s5">
+                {% if producto.foto %}
+                    <tr><td><p><img src="{{producto.foto.url}}" height="300" width="300"></p></td></tr>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s3 offset-s5">
+                <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i><input type="submit" name="opcion" value="Actualizar"></a>
+                <a href="administrar" class="waves-effect waves-light btn">Cancelar</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

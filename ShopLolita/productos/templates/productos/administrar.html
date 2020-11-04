@@ -1,0 +1,48 @@
+
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <h3>¿Que acción desea realizar?</h3>
+    <br>
+    <br>
+    <div class="row" style="background-color: #FFFFFF;">
+
+        <div class="row">
+            <div class="col s3 offset-s3">
+                <img src="{% static 'Iconos/agregarP.jpg' %}"  alt="" width="200" height="200">
+                <br>
+                <a href="agregar" ><p class="flow-text" color="blue">Agregar Producto</p></a>
+            </div>
+            <div class="col s3 offset-s1">
+                <img src="{% static 'Iconos/listarP.jpg' %}"  alt="" width="200" height="200">
+                <br>
+                <a href="mostrar_productos" ><p class="flow-text">Listar Producto</p></a>
+            </div>
+         <div class="row">
+            <div class="col s3 offset-s1">
+                <img src="{% static 'Iconos/eliminarP.jpg' %}"  alt="" width="200" height="200">
+                <br>
+                <a href="eliminar" ><p class="flow-text">Eliminar Producto</p></a>
+            </div>
+            <br>
+            <div class="col s3 offset-s1">
+                <img src="{% static 'Iconos/BuscarP.jpg' %}"  alt="" width="200" height="200">
+                <br>
+                <a href="boton_buscar" ><p class="flow-text">Buscar Producto</p></a>
+            </div>
+            <br>
+            <div class="col s3 offset-s1">
+                <img src="{% static 'Iconos/modificarP.jpg' %}"  alt="" width="200" height="200">
+                <br>
+                <a href="editar" ><p class="flow-text">Modificar Producto</p></a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock %}

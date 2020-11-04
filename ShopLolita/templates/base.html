@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> {% block title%}   {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tools.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+</head>
+<body>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+
+
+    <script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/codigoCarru.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/fondo.js' %}"></script>
+    <script src="{% static 'js/jquery-3.5.1.mib.js' %}"></script>
+    <script src="{% static 'js/rango-jquery.js' %}"></script>
+
+    {% block javascript%}
+
+    {% endblock%}
+</body>
+</html>

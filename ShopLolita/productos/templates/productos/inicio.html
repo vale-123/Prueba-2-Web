@@ -1,0 +1,33 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Inicio {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="{% static 'slides/cinNegro.jpg' %}" alt="">
+                <div class="caption center-align">
+                </div>
+            </li>
+            <li>
+                <img src="{% static 'slides/shiba.jpg' %}" alt="">
+                <div class="caption center-align">
+                </div>
+            </li>
+            <li>
+                <img src="{% static 'slides/shorres2.jpg' %}" alt="">
+                <div class="caption center-align">
+                </div>
+            </li>
+        </ul>
+    </div>
+
+<script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+<script type="text/javascript" src="{%  static 'js/fondo.js' %}"></script>
+{% endblock %}
+
+{% block javascript%}
+
+{% endblock%}

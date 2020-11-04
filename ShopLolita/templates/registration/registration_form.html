@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+
+{% block content %}
+<h3 class='text-align-center'><strong>Registrarte Gratis!</strong></h3><br/>
+<hr>
+<div class='row'>
+    <div class='col s4 offset-s4'>
+
+        <form method="post" action=".">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <center><input class='btn btn-block btn-primary' type="submit" value="{% trans 'Registrarme' %}" /></center>
+        </form>
+    </div>
+</div>
+
+<hr/>
+<div class='row'>
+<div class='col s4 offset-s4 text-align-center'>
+<center><p>¿Ya tienes cuenta? <a href="{% url 'auth_login' %}"> Iniciar Sesión.</a></p></center>
+</div>
+</div>
+{% endblock %}
+
+

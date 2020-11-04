@@ -1,0 +1,30 @@
+{% extends "productos/base.html" %}
+
+{%block title %} Boton Listar {% endblock%}
+
+{% block content%}
+    {% load static %}
+    <h3>Listado de Producto</h3>
+    <br><br>
+    <div class="row">
+        <div class="col s4 offset-s5">
+            La cantidad de productos es: {{ listado | length }} <br><br>
+            {% for producto in listado %}
+                <label>Numero   </label><label>   Nombre   </label><label>   Precio   </label><label>   Stock</label><br>
+                {{ producto.numero }} - {{ producto.nombre}} - {{producto.precio}} - {{producto.stock}} <br><br>
+
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+            <div class="col s3 offset-s5">
+                <a href="administrar" class="waves-effect waves-light btn">Volver</a>
+            </div>
+    </div>
+
+{% endblock %}
+
+{% block javascript%}
+{% endblock %}
+
+

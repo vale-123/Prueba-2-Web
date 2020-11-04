@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title> {% block title%}  Le Ciel {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tools.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/materialize.min.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+<center>
+    <nav class="nav-extended #000000 black" >
+        <div class="nav-wrapper">
+
+            <center><img class="responsive-img" alt="" src="{%static 'Imagenes/portada_2.png' %}" width="1500" height="1000"></center>
+
+
+            </div>
+        </div>
+        <hr>
+        <div class="nav-wrapper" >
+            <ul class="col s12 ">
+                <li class="tab" ><a href="" > ~BIENVENIDO~ </a></li>
+                {% if user.is_authenticated %}
+                    <li class="tab"><a href="" >>Usuario: {{ user.username }}</a></li>
+                {% endif %}
+                <li class="tab"><a href="inicio" >>INICIO</a></li>
+                <li class="tab"><a href="Calzado" >>CALZADO</a></li>
+                <li class="tab"><a href="Ropa" >>ROPA</a></li>
+                <li class="tab"><a href="Accesorios" >>ACCESORIOS</a></li>
+                <li class="tab"><a href="Vestidos" >>VESTIDOS</a></li>
+                <li class="tab"><a href="administrar" >>CONTROL</a></li>
+                {% if not user.is_authenticated %}
+                <li class="tab"><a href="{% url 'auth_login' %}" >>Iniciar Sesión</a></li>
+                {% endif %}
+                {% if user.is_authenticated %}
+                <li class="tab"><a href="{% url 'auth_logout' %}" >>>Cerrar Sesión</a></li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+</center>
+    <div class="row">
+        {% block content %}
+
+        {% endblock %}
+
+            <div class="background #f8bbd0 pink lighten-4" >
+                <div class="carousel">
+                    <a class="carousel-item" href=""><img src="{%static 'carrusel1/ventas.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+                    <a class="carousel-item" href=""><img src="{%static 'carrusel1/redeees.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+                    <a class="carousel-item" href=""><img src="{%static 'carrusel1/envios.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+                    <a class="carousel-item" href=""><img src="{%static 'carrusel1/feed.jpg' %}" width="250" height="200" style="border: 2px solid; color: black;"></a>
+                </div>
+            </div>
+
+        <footer class="page-footer #000000 black">
+            <div class="container">
+                <div class="row">
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">~Le Ciel~ ~Lolita Shop~</h5>
+                        <p><img class="responsive-img" alt="" src="{%static 'Imagenes/gif.gif' %}" width="250" height="250"></p>
+                    </div>
+                    <div class="col l4 s12">
+                        <h5 class="white-text">Síguenos! Nuestras Redes Sociales: </h5>
+                        <br>
+                        <center>
+                            <ul>
+                                <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/"
+                                       target="_blank"><img src="{%static 'Imagenes/face.png' %}"  width="45" height="45" alt=""></a></li>
+                                <br>
+                                <li><a class="grey-text text-lighten-3" href="https://www.instagram.com/"
+                                       target="_blank"><img src="{%static 'Imagenes/insta.png' %}"  width="55" height="55" alt=""></a></li>
+                                <br>
+                                <li><a class="grey-text text-lighten-3" href="https://twitter.com/?lang=es"
+                                       target="_blank"><img src="{%static 'Imagenes/twitter1.png' %}"  width="55" height="55" alt=""></a></li>
+                            </ul>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright ">
+                <div class="container">
+
+                <center>   © 2020 Todos los Derechos Reservados </center>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/codigoCarru.js' %}"></script>
+    <script type="text/javascript" src="{%  static 'js/fondo.js' %}"></script>
+    <script src="{% static 'js/jquery-3.5.1.mib.js' %}"></script>
+    <script src="{% static 'js/rango-jquery.js' %}"></script>
+
+    {% block javascript%}
+
+
+
+    {% endblock javascript%}
+
+
+</body>
+</html>
+
