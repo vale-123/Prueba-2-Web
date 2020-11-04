@@ -5,9 +5,9 @@ from productos.models import Producto
 class testProducto(unittest.TestCase):
 
     def test_crear_calzado(self):
-        producto = Producto.objects.create(numero= 900,
-                                       nombre='Bota Lolita',
-                                       precio= 2000,
+        producto = Producto.objects.create(numero= 690,
+                                       nombre='Zapato Rosa',
+                                       precio= 20000,
                                        stock= 100,
                                        tipo='calzado',
                                        activo=1
@@ -17,8 +17,8 @@ class testProducto(unittest.TestCase):
         self.assertTrue(producto,True)
 
     def test_crear_acesorios(self):
-        producto = Producto.objects.create(numero=9000,
-                                           nombre='Cintillo Encaje Lolita',
+        producto = Producto.objects.create(numero=363,
+                                           nombre='Collar Encaje Lolita',
                                            precio=5000,
                                            stock=67,
                                            tipo='acesorios',
