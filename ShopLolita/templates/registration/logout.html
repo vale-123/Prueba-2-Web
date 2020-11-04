@@ -14,13 +14,13 @@
 
 
 </head>
-<body>
+<body >
 
-    <h3><p class='lead'>{% trans "Fin de Sesión." %}</p></h3>
+    <h3><p class='lead'>{% trans "Ha finalizado la Sesión" %}</p></h3>
     <hr>
-    <center><img src="{% static 'Imagenes/sailor2.jpg' %}"></center>
+    <center><img src="{% static 'Imagenes/icono.png' %}"></center>
     <br>
-    <center><h3><p><a href="{% url 'auth_login' %}">Login</a></p></p></h3></center>
+    <center><h3><p><a href="{% url 'auth_login' %}">Iniciar Sesión</a></p></p></h3></center>
 
     <script type="text/javascript" src="{%  static 'js/materialize.min.js' %}"></script>
     <script type="text/javascript" src="{%  static 'js/codigoCarru.js' %}"></script>
