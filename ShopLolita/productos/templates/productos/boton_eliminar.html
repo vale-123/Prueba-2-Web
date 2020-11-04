@@ -11,10 +11,12 @@
         <div class="col s4 offset-s4">
             <form action="eliminar_por_id" method="POST">
                 {% csrf_token %}
-                <label>Ingrese el código del Producto</label>
+                <center><label>Ingrese el código del Producto</label></center>
                 <input type="number" name="numero">
-                <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i><input type="submit" name="opcion" value="Eliminar"></a>
-                <a href="administrar" class="waves-effect waves-light btn">Cancelar</a>
+                <br> <br>
+                <center><a class="waves-effect waves-light btn"><input type="submit" name="opcion" value="Eliminar"></a></center>
+                <br> <br>
+                <center><a href="administrar" class="waves-effect waves-light btn">Cancelar</a></center>
             </form>
 
         </div>
